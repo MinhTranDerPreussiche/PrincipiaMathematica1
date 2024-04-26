@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triangle Similarity Game - Medium</title>
+<link rel="stylesheet" href="medium.css">
+</head>
+<body>
+<div class="game-container">
+    <div class="game-area">
+        <div class="image-area">
+            <img src="./assets/mediumPic.jpeg" alt="Image" style="width:30%; height:auto;">
+        </div>
+        <h2>Drag and drop to prove triangles △XYZ ~ △ABC using the AA postulate</h2>
+        <div id="statements">
+            <div class="column">
+                <div draggable="true" id="statement1" class="draggable">∠Y = ∠B</div>
+                <div draggable="true" id="statement2" class="draggable">∠Z = ∠C</div>
+                <div draggable="true" id="statement3" class="draggable">△XYZ ~ △ABC</div>
+                <div draggable="true" id="statement4" class="draggable">AB/XY = CB/ZY</div>
+            </div>
+            <div class="column">
+                <div draggable="true" id="reason1" class="draggable">Given</div>
+                <div draggable="true" id="reason2" class="draggable">Given</div>
+                <div draggable="true" id="reason3" class="draggable">AA Postulate</div>
+                <div draggable="true" id="reason4" class="draggable">CSSTP</div>
+            </div>
+        </div>
+        
+        <div class="drop-zone-container">
+            <div id="drop-zone-statements" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <p>Drop Statements Here</p>
+            </div>
+            <div id="drop-zone-reasons" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <p>Drop Reasons Here</p>
+            </div>
+        </div>
+        
+        <button onclick="submitAnswers()">Submit</button>
+        <button onclick="resetGame()">Reset</button>
+        <button onclick="goBackToGames()">Back to Games</button>
+        <p id="score"></p>
+    </div>
+</div>
+<script src="medium.js"></script>
+</body>
+</html>

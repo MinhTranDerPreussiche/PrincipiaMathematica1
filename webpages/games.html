@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Page</title>
+    <link rel="stylesheet" href="gamesmain.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Games</h1>
+    <p>Welcome to the games page! Choose your difficulty level:</p>
+
+    <div class="difficulty-options">
+        <button onclick="startGame('easy')">Easy</button>
+        <button onclick="startGame('medium')">Medium</button>
+        <button onclick="startGame('hard')">Hard</button>
+    </div>
+    <script> var score1 = localStorage.getItem("geometryGameScore");
+    </script>
+   
+<script>
+    // Function to start the game based on the selected difficulty
+    function startGame(difficulty) {
+        window.location.href = "./Games/easy.html"
+    }
+</script>
+
+</body>
+</html>

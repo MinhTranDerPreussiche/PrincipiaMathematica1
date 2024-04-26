@@ -1,0 +1,70 @@
+/* Basic reset for consistent styling across browsers */
+body, h1, h2, h3, p, ul, ol, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /* Remove underline from links */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Simple, readable font */
+    line-height: 1.6;
+    color: #333; /* Dark gray for text for better readability */
+    background-color: rgb(79, 111, 82); /* Green background */
+    padding: 20px;
+}
+
+#background {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff; /* White background for content area */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    position: relative; /* Needed for z-index to work correctly */
+}
+
+h1 {
+    color: rgb(79, 111, 82); /* Green for main heading */
+    font-size: 28px; /* Larger font size for main heading */
+    margin-bottom: 20px; /* Space after heading */
+}
+
+h3 {
+    color: #555; /* Darker grey for subheadings */
+    margin-bottom: 10px; /* Space after subheadings */
+}
+
+p {
+    margin-bottom: 20px; /* Space after paragraphs */
+}
+
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+li {
+    background-color: #e7e7e7; /* Light grey background for list items */
+    margin-bottom: 5px; /* Space between list items */
+    padding: 10px; /* Padding inside list items */
+    border-radius: 5px; /* Rounded corners for list items */
+}
+
+li a {
+    color: rgb(79, 111, 82); /* Green to match headings */
+    display: block; /* Make the links fill their containers */
+}
+
+hr {
+    margin-top: 40px; /* Space before horizontal rule */
+    margin-bottom: 20px; /* Space after horizontal rule */
+}
+
+a:hover {
+    color: white;
+}
+
+.footer {
+    text-align: center; /* Center-align footer content */
+    font-size: 0.85em; /* Smaller text for footer */
+    color: #666; /* Lighter grey for footer text */
+}
