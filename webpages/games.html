@@ -12,19 +12,26 @@
     <p>Welcome to the games page! Choose your difficulty level:</p>
 
     <div class="difficulty-options">
-        <button onclick="startGame('easy')">Easy</button>
-        <button onclick="startGame('medium')">Medium</button>
-        <button onclick="startGame('hard')">Hard</button>
+        <button onclick="starteasy()">Easy</button>
+        <button onclick="startmedium()">Medium</button>
+        <button onclick="starthard()">Hard</button>
     </div>
     <script> var score1 = localStorage.getItem("geometryGameScore");
     </script>
    
 <script>
     // Function to start the game based on the selected difficulty
-    function startGame(difficulty) {
+    function starteasy(easy) {
         window.location.href = "./Games/easy.html"
     }
+    function startmedium(medium) {
+        window.location.href = "./Games/medium.html"
+    }
+    function starthard(hard) {
+        window.location.href = "./Games/hard.html"
+    }
 </script>
-
+<button onclick="window.location.href='../index.html'">Back to Home</button>
+ps: I never debugged medium and hard mode
 </body>
 </html>

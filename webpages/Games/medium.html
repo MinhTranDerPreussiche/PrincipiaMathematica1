@@ -13,14 +13,14 @@
             <img src="./assets/mediumPic.jpeg" alt="Image" style="width:30%; height:auto;">
         </div>
         <h2>Drag and drop to prove triangles △XYZ ~ △ABC using the AA postulate</h2>
-        <div id="statements">
+        <div id="statements" data-order="1">
             <div class="column">
                 <div draggable="true" id="statement1" class="draggable">∠Y = ∠B</div>
                 <div draggable="true" id="statement2" class="draggable">∠Z = ∠C</div>
                 <div draggable="true" id="statement3" class="draggable">△XYZ ~ △ABC</div>
                 <div draggable="true" id="statement4" class="draggable">AB/XY = CB/ZY</div>
             </div>
-            <div class="column">
+            <div class="column" data-order="1">
                 <div draggable="true" id="reason1" class="draggable">Given</div>
                 <div draggable="true" id="reason2" class="draggable">Given</div>
                 <div draggable="true" id="reason3" class="draggable">AA Postulate</div>
@@ -39,7 +39,7 @@
         
         <button onclick="submitAnswers()">Submit</button>
         <button onclick="resetGame()">Reset</button>
-        <button onclick="goBackToGames()">Back to Games</button>
+        <button onclick="window.location.href='../games.html'">Back to Games</button>
         <p id="score"></p>
     </div>
 </div>

@@ -1,0 +1,108 @@
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+.drag-items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.statements, .reasons {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+.drop-zone {
+    min-height: 50px;
+    background-color: #e9e9e9;
+    border: 2px dashed #aaa;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Add CSS for the reset button for visual consistency */
+.reset-button {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding around text */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline on text */
+  display: inline-block; /* Allows setting margins */
+  font-size: 16px; /* Text size */
+  margin: 4px 2px; /* Spacing between buttons */
+  cursor: pointer; /* Indicates clickable item */
+  border-radius: 8px; /* Rounded corners */
+}
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+/* Flexbox layout for drag items */
+.drag-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        margin: 20px;
+    }
+    .statements, .reasons {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+    .drag-items {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+}
+@media (max-width: 480px) {
+    .statements, .reasons {
+        font-size: 12px; /* Smaller font size for very small devices */
+    }
+    .drop-zone {
+        min-height: 40px; /* Adjust drop zone size for smaller screens */
+    }
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+.drag-items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.statements, .reasons {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #333;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+.drop-zone {
+    min-height: 50px;
+    background-color: #e9e9e9;
+    border: 2px dashed #aaa;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
