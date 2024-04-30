@@ -9,41 +9,75 @@
 <body>
     <div class="container">
         <h2>Drag the Correct Statement Next to its Reason</h2>
-        <div class="drag-items">
-          <!-- Statements -->
-          <div class="statements" draggable="true" id="statement1">Draw squares (CBDE), (BAGF), and (ACIH) on sides (BC), (AB), and (AC) of a right-angled triangle (ABC) with the right angle at (C).</div>
-          <div class="statements" draggable="true" id="statement2">From point (A), draw a line parallel to (BD) and (CE), intersecting (BC) at (K) and (DE) at (L).</div>
-          <div class="statements" draggable="true" id="statement3">Triangles (BCF) and (BDA) are formed.</div>
-          <div class="statements" draggable="true" id="statement4">Triangles (BDA) and (BCF) are congruent.</div>
-          <div class="statements" draggable="true" id="statement5">Rectangle (BDLK) is twice the area of triangle (BDA), and rectangle (CKLE) is twice the area of triangle (BCF).</div>
-          <div class="statements" draggable="true" id="statement6">Square (BAGF) is equal in area to rectangle (BDLK); Square (ACIH) is equal in area to rectangle (CKLE).</div>
-          <div class="statements" draggable="true" id="statement7">The total area of squares (BAGF) and (ACIH) is equal to the area of square (CBDE).</div>
-          <div class="statements" draggable="true" id="statement8">Thus, (AB^2 + AC^2 = BC^2).</div>
-
-          <!-- Reasons -->
-          <div class="reasons" draggable="true" id="reason1">Definition of squares based on triangle sides.</div>
-          <div class="reasons" draggable="true" id="reason2">Construction based on parallel postulate.</div>
-          <div class="reasons" draggable="true" id="reason3">Figures resulted from the previous construction.</div>
-          <div class="reasons" draggable="true" id="reason4">Side-angle-side postulate: two sides and the included angle of one triangle are congruent to two sides and the included angle of another triangle.</div>
-          <div class="reasons" draggable="true" id="reason5">The area of a triangle is half the area of a rectangle on the same base and having the same altitude.</div>
-          <div class="reasons" draggable="true" id="reason6">The area of the squares on the legs of the triangle is equivalent to the areas of the corresponding rectangles formed by construction.</div>
-          <div class="reasons" draggable="true" id="reason7">Summation of areas based on the equivalence established by congruent triangles and the properties of the constructed rectangles.</div>
-          <div class="reasons" draggable="true" id="reason8">Concluding from the equality of the areas, the Pythagorean theorem is proved.</div>
+        <div class="selection-container">
+            <div class="statements-container">
+                <h3>Statements</h3>
+                <!-- Statements -->
+                <div class="statements" draggable="true" id="statement1">Draw squares (CBDE), (BAGF), and (ACIH) on sides (BC), (AB), and (AC) of a right-angled triangle (ABC) with the right angle at (C).</div>
+                <div class="statements" draggable="true" id="statement2">From point (A), draw a line parallel to (BD) and (CE), intersecting (BC) at (K) and (DE) at (L).</div>
+                <div class="statements" draggable="true" id="statement3">Triangles (BCF) and (BDA) are formed.</div>
+                <div class="statements" draggable="true" id="statement4">Triangles (BDA) and (BCF) are congruent.</div>
+                <div class="statements" draggable="true" id="statement5">Rectangle (BDLK) is twice the area of triangle (BDA), and rectangle (CKLE) is twice the area of triangle (BCF).</div>
+                <div class="statements" draggable="true" id="statement6">Square (BAGF) is equal in area to rectangle (BDLK); Square (ACIH) is equal in area to rectangle (CKLE).</div>
+                <div class="statements" draggable="true" id="statement7">The total area of squares (BAGF) and (ACIH) is equal to the area of square (CBDE).</div>
+                <div class="statements" draggable="true" id="statement8">Thus, (AB^2 + AC^2 = BC^2).</div>
+            </div>
+            <div class="reasons-container">
+                <h3>Reasons</h3>
+                <!-- Reasons -->
+                <div class="reasons" draggable="true" id="reason1">Definition of squares based on triangle sides.</div>
+                <div class="reasons" draggable="true" id="reason2">Construction based on parallel postulate.</div>
+                <div class="reasons" draggable="true" id="reason3">Figures resulted from the previous construction.</div>
+                <div class="reasons" draggable="true" id="reason4">Side-angle-side postulate: two sides and the included angle of one triangle are congruent to two sides and the included angle of another triangle.</div>
+                <div class="reasons" draggable="true" id="reason5">The area of a triangle is half the area of a rectangle on the same base and having the same altitude.</div>
+                <div class="reasons" draggable="true" id="reason6">The area of the squares on the legs of the triangle is equivalent to the areas of the corresponding rectangles formed by construction.</div>
+                <div class="reasons" draggable="true" id="reason7">Summation of areas based on the equivalence established by congruent triangles and the properties of the constructed rectangles.</div>
+                <div class="reasons" draggable="true" id="reason8">Concluding from the equality of the areas, the Pythagorean theorem is proved.</div>
+            </div>
         </div>
         <table id="proofTable">
           <tr><th>Statement</th><th>Reason</th></tr>
           <!-- Drop zones in table, ensure data-correct attributes match statement ID -->
           <tr>
-            <td><div class="drop-zone" data-correct="statement1"></div></td>
-            <td><div class="drop-zone" data-correct="reason1"></div></td>
+            <td><div class="drop-zone" data-correct="statement1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
           </tr>
-          <!-- Add more drop zones following the template -->
+          <!-- Completed additional drop zones -->
+          <tr>
+            <td><div class="drop-zone" data-correct="statement2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement6" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason6" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement7" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason7" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement8" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+            <td><div class="drop-zone" data-correct="reason8" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
         </table>
         <button onclick="checkAnswers()">Check My Answers</button>
         <button class="back-to-games-button" onclick="window.location.href='../games.html'">Back to Games</button>
+        <button onclick="resetGame()">Reset</button>
         <div id="feedback"></div>
     </div>
     <script src="hard.js"></script>
-  <button onclick="resetGame()">Reset</button>
+
 </body>
 </html>

@@ -1,64 +1,69 @@
-// script.js
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+function checkAnswers() {
+    const dropZones = document.querySelectorAll('.drop-zone');
+    let correctCount = 0;
+    let incorrectCount = 0;
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var draggedElement = document.getElementById(data);
-
-    // Check to prevent placing elements inside other draggable elements
-    if (ev.target.className.includes("draggable")) {
-        return;
-    }
-
-    ev.target.appendChild(draggedElement);
-}
-
-
-function submitAnswers() {
-    // Define groups
-    const givensGroup = ["statement1", "statement2", "statement3"];
-    const congruenceGroup = ["statement4"];
-    const cpctcGroup = ["statement5"];
-    
-    // Retrieve the children from the drop-zone
-    const children = Array.from(document.getElementById("drop-zone").children);
-
-    // Initialize counters for each group
-    let givensCount = 0, congruenceCount = 0, cpctcCount = 0;
-
-    // Calculate scores based on group placement
-    children.forEach(child => {
-        if (givensGroup.includes(child.id)) {
-            if (congruenceCount === 0 && cpctcCount === 0) givensCount++;
-        } else if (congruenceGroup.includes(child.id)) {
-            if (givensCount === givensGroup.length && cpctcCount === 0) congruenceCount++;
-        } else if (cpctcGroup.includes(child.id)) {
-            if (givensCount === givensGroup.length && congruenceCount === congruenceGroup.length) cpctcCount++;
+    dropZones.forEach(zone => {
+        if (zone.children.length > 0 && zone.getAttribute('data-correct') == zone.children[0].id) {
+            correctCount++;
+            zone.style.backgroundColor = '#c8e6c9'; // Green for correct
+        } else {
+            incorrectCount++;
+            zone.style.backgroundColor = '#ffcdd2'; // Red for incorrect
         }
     });
 
-    const finalScore = ((givensCount + congruenceCount + cpctcCount) / 5 * 100) + "%";
-    document.getElementById("score").innerText = "Your score: " + finalScore;
-
-    // Save the score in local storage
-    localStorage.setItem("geometryGameScore", finalScore);
+    const feedbackElement = document.getElementById('feedback');
+    feedbackElement.innerHTML = `You matched ${correctCount} correctly out of ${dropZones.length}.`;
 }
 
 function resetGame() {
-    // Reload the page to reset the game
-    window.location.reload();
+    window.location.reload(true);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    let draggables = document.querySelectorAll('.draggable');
-    draggables.forEach((item) => {
-        item.addEventListener('dragstart', drag);
+document.addEventListener('DOMContentLoaded', () => {
+    const dragItems = document.querySelectorAll('.statements');
+
+    dragItems.forEach(item => {
+        item.addEventListener('dragstart', dragStart);
+        item.addEventListener('dragend', dragEnd);
+    });
+
+    const dropZones = document.querySelectorAll('.drop-zone');
+
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragover', dragOver);
+        zone.addEventListener('dragenter', dragEnter);
+        zone.addEventListener('dragleave', dragLeave);
+        zone.addEventListener('drop', dragDrop);
     });
 });
+
+function dragStart(e) {
+    e.dataTransfer.setData('text', e.target.id);
+}
+
+function dragEnd() {
+    // Optional clean up or reset function after drag ends
+}
+
+function dragOver(e) {
+    e.preventDefault();
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+    this.style.backgroundColor = '#ddd'; // Visual cue
+}
+
+function dragLeave() {
+    this.style.backgroundColor = '#e9e9e9'; // Reset background color
+}
+
+function dragDrop(e) {
+    e.preventDefault();
+    this.style.backgroundColor = '#e9e9e9'; // Reset background color
+    const draggedElementId = e.dataTransfer.getData('text');
+    const draggedElement = document.getElementById(draggedElementId);
+    this.appendChild(draggedElement);
+}

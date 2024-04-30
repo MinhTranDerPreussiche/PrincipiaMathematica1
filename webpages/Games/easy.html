@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    img{
-        float: right;
-        margin-right: 15%;
-    }
-</style>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triangle Congruence Game</title>
-<link rel="stylesheet" href="easy.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Congruence Game</title>
+    <link rel="stylesheet" href="easy.css">
 </head>
 <body>
-<div class="game-container">
-    <div class="game-area">
-        <div class="image-area">
-            <img src="./assets/easyPic.jpeg" alt="Image" style="width:30%; height:auto;">
+    <div class="container">
+        <h2>Prove ∠ABC = ∠DEF</h2>
+        <div class="statements-container">
+            <div class="statements" draggable="true" id="statement1">AB ≅ DE (Given)</div>
+            <div class="statements" draggable="true" id="statement2">BC ≅ EF (Given)</div>
+            <div class="statements" draggable="true" id="statement3">AC ≅ DF (Given)</div>
+            <div class="statements" draggable="true" id="statement4">△ABC ≅ △DEF (SSS Postulate)</div>
+            <div class="statements" draggable="true" id="statement5">∠ABC = ∠DEF (CPCTC)</div>
         </div>
-        <h2>Drag and drop to prove ⦣ABC is congruent to ⦣DEF</h2>
-        <div id="statements">
-            <div class="column">
-                <div draggable="true" id="statement1" class="draggable">AB ≅ DE (Given)</div>
-                <div draggable="true" id="statement2" class="draggable">BC ≅ EF (Given)</div>
-                <div draggable="true" id="statement3" class="draggable">AC ≅ DF (Given)</div>
-                <div draggable="true" id="statement4" class="draggable">△ABC ≅ △DEF (SSS postulate)</div>
-                <div draggable="true" id="statement5" class="draggable">∠ABC = ∠DEF (CPCTC)</div>
-            </div>
-        </div>
-        
-        <div id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <p id="boxe">Drop items here to build the proof</p>
-        </div>
-        <button onclick="submitAnswers()">Submit</button>
+        <table id="proofTable">
+          <tr><th>Proof Steps</th></tr>
+          <!-- Drop zones in table, ensure data-correct attributes match statement ID -->
+          <tr>
+            <td><div class="drop-zone" data-correct="statement1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+          <tr>
+            <td><div class="drop-zone" data-correct="statement5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+          </tr>
+        </table>
+        <button onclick="checkAnswers()">Check My Answers</button>
+        <a href="../games.html"><button>Back to Games</button></a>
         <button onclick="resetGame()">Reset</button>
-        <button onclick="goBackToGames()">Back to Games</button>
-        <p id="score"></p>
+        <div id="feedback"></div> <!-- Feedback div -->
+
+        <!-- Button to go back to games.html -->
+        
     </div>
-    
-</div>
-<script>
-    
-    function goBackToGames() {
-        window.location.href = '../games.html';
-    }
-</script>
-<script src="easy.js"></script>
+    <script src="easy.js"></script>
 </body>
 </html>

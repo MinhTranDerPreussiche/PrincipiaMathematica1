@@ -9,12 +9,14 @@
 <body>
 <div class="container">
     <h1>Games</h1>
-    <p>Welcome to the games page! Choose your difficulty level:</p>
+    <p>Try making a proof yourself! Choose your difficulty level:</p>
 
     <div class="difficulty-options">
         <button onclick="starteasy()">Easy</button>
         <button onclick="startmedium()">Medium</button>
         <button onclick="starthard()">Hard</button>
+        <button onclick="startveryhard()">Very Hard</button>
+        <button onclick="startimpossible()">Impossible (calculus)</button>
     </div>
     <script> var score1 = localStorage.getItem("geometryGameScore");
     </script>
@@ -27,11 +29,16 @@
     function startmedium(medium) {
         window.location.href = "./Games/medium.html"
     }
-    function starthard(hard) {
+    function startveryhard(hard) {
         window.location.href = "./Games/hard.html"
+    }
+    function starthard(hard) {
+        window.location.href = "./Games/veryhard.html"
+    }
+    function startimpossible(mad) {
+        window.location.href = "./Games/impossible.html"
     }
 </script>
 <button onclick="window.location.href='../index.html'">Back to Home</button>
-ps: I never debugged medium and hard mode
 </body>
 </html>
